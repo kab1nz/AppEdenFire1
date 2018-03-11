@@ -1,6 +1,7 @@
 package com.example.a.appedenfire.objetos;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -46,23 +47,33 @@ public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.
         holder.nhab.setText(String.valueOf(reservaList.get(position).getNhabitaciones()));
         holder.precio.setText(String.valueOf(reservaList.get(position).getPrecio()));
         holder.tipo.setText(reservaList.get(position).getTipo());
-
         final String user_id = reservaList.get(position).userId;
         Button btnaceptar = holder.mView.findViewById(R.id.btnaceptar);
+        Button btnrechazar = holder.mView.findViewById(R.id.btnrechazar);
+
         btnaceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"USER ID: => "+user_id,Toast.LENGTH_SHORT).show();
-                listener.aceptarReserva(user_id);
+                listener.aceptarReserva(user_id,position);
 
 
             }
         });
+        btnrechazar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              listener.rechazarReserva(user_id,position);
+            }
+        });
         int re = reservaList.get(position).getReserva();
+
         if(re==1){
-            holder.mView.setBackgroundColor(0xFF00FF00);
-        }else if(re==0){
-            holder.mView.setBackgroundColor(0xFFFFFFFF);
+            holder.cv.setBackgroundColor(context.getResources().getColor(R.color.verde));
+        } if(re==0){
+            holder.cv.setBackgroundColor(0xFFFFFF);
+
+        } if(re==2){
+            holder.cv.setBackgroundColor(context.getResources().getColor(R.color.rojo));
 
         }
 
@@ -83,6 +94,7 @@ public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.
         public TextView fechasalida;
         public TextView tipo;
         public TextView precio;
+        CardView cv;
 
         public ViewHolder(View view) {
             super(view);
@@ -96,6 +108,7 @@ public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.
             nhab=(TextView)mView.findViewById(R.id.labelNhab);
             tipo=(TextView)mView.findViewById(R.id.labelTipo);
             precio=(TextView)mView.findViewById(R.id.labelPrecio);
+            cv=mView.findViewById(R.id.card_view);
 
         }
     }

@@ -113,7 +113,7 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
 
 
     @Override
-    public void aceptarReserva(String id) {
+    public void aceptarReserva(String id, final int pos) {
         DocumentReference washingtonRef = firebaseFirestore.collection("Eden").document(id);
 
 // Set the "isCapital" field of the city 'DC'
@@ -122,7 +122,33 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
+                        Log.d("firebase-->", "DocumentSnapshot reserva 1 successfully updated!");
+                        reservaList.get(pos).setReserva(1);
+                        reservaListAdapter.notifyDataSetChanged();
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("firebase-->", "Error updating document", e);
+                    }
+                });
+    }
+
+    @Override
+    public void rechazarReserva(String id, final int pos) {
+        DocumentReference washingtonRef = firebaseFirestore.collection("Eden").document(id);
+
+        washingtonRef
+                .update("reserva", 2)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
                         Log.d("firebase-->", "DocumentSnapshot successfully updated!");
+                        reservaList.get(pos).setReserva(2);
+
+                        reservaListAdapter.notifyDataSetChanged();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

@@ -13,6 +13,7 @@ import com.example.a.appedenfire.R;
 
 public class ReservaHolder extends RecyclerView.ViewHolder {
     private View mView;
+
     public ReservaHolder(View itemView) {
         super(itemView);
         mView = itemView;

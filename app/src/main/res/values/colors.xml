@@ -5,5 +5,7 @@
     <color name="colorAccent">#ff4081</color>
     <color name="trans">#54868686</color>
     <color name="verde">#134613</color>
+    <color name="rojo">#ff0004</color>
+
     <color name="blanco">#ffffff</color>
 </resources>
