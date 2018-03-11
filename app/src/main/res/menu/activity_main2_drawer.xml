@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_ini"
+            android:icon="@drawable/ic_info"
+            android:title="Inicio" />
+        <item
+        android:id="@+id/nav_info"
+        android:icon="@drawable/ic_info"
+        android:title="Información" />
+        <item
+            android:id="@+id/nav_eventos"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Eventos" />
+        <item
+            android:id="@+id/nav_restaurante"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Restaurante" />
+
+        <item
+            android:id="@+id/nav_instalaciones"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Instalaciones y Servicios" />
+        <item
+            android:id="@+id/nav_galeria"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Galeria de Eventos" />
+        <item
+            android:id="@+id/nav_lugar"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Lugar de Interés" />
+    </group>
+
+    <item android:title="Reservas">
+        <menu>
+            <item
+                android:id="@+id/nav_habitacion"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Habitacion y Suites" />
+            <item
+                android:id="@+id/nav_oferta"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

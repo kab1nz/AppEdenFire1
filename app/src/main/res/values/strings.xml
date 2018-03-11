@@ -14,4 +14,10 @@ Realizamos tanto aniversarios, bodas, ceremonias civiles, comuniones......como d
     <string name="instalaciones">TV vía Satélite,  Baño completo con secador de pelo,  Aire Acondicionado / calefacción</string>
     <string name="servicios">Parking privado gratuito, Piscina,  Parque Infantil, TerInternet Gratuito,  Consigna,  Servicio de lavandería,  Café-Bar y restaurante,  Sala de reuniones/audiovisuales.</string>
     <string name="interes">Se caracteriza por tener un turismo poco masificado por lo que es idóneo tanto para escapadas de fin de semana como para vacaciones de varios días.Algunas de estas imágenes describen nuestros lugares preferidos.</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
