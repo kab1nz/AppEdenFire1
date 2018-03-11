@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1020322640659",
+    "firebase_url": "https://appedenfire.firebaseio.com",
+    "project_id": "appedenfire",
+    "storage_bucket": "appedenfire.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020322640659:android:5a1084fdf721bd29",
+        "android_client_info": {
+          "package_name": "com.example.a.appedenfire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020322640659-u344tfkjsj3oo36jbqekb9ptpoi3hd06.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.a.appedenfire",
+            "certificate_hash": "bd4a336d261a154c14a7032e0394d230fb3f5609"
+          }
+        },
+        {
+          "client_id": "1020322640659-57gpt7pngo1aqq29sjfrrrv8a04fhqc6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoknknAvfHcl3CvaKX5HaXHxHJMG4VyFY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020322640659-57gpt7pngo1aqq29sjfrrrv8a04fhqc6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

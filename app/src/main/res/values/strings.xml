@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AppEden</string>
+    <string name="ELeden">Hotel El Edén</string>
+    <string name="toolbarTitle">Información</string>
+    <string name="informacion">En pleno corazón del poniente Almeriense nace "El Edén", un hotel que se distingue por el trato familiar que dan a todos los huéspedes que quieran disfrutar de sus instalaciones.
+</string>
+    <string name="informacion1">Cuenta con una situación privilegiada donde, a poca distancia puede disfrutar de la playa, de la montaña, de la atractiva Alpujarra (tanto almeriense como granadina), del Parque Natural Cabo de Gata con sus maginíficas calas, la ciudad de Almería con su Alcazaba del siglo X... un sin fin de atractivas opciones para disfrutar.</string>
+    <string name="direcion"> CARRETERA DE MALAGA, KM.414, 04710 Santa María del Águila, Almería</string>
+    <string name="recursosuite">Disponemos de 15 elegantes habitavcioens con baño privado, escritorio,TV satélite, secador, caja fuertem wifi gratis y algunas con bañera de hidromasaje. En las zonas comunes se puede disfrutar de una pequeña biblioteca, salones,cafetería y dispone de ancesor para facilitar el movimiento por el hotel , jardines y terrazas así como parking propio.</string>
+    <string name="recursoresta">Nuestros platos están elaborados al 100%, tanto verduras como pescados y mariscos, con excelentes productos de la tierra y del mar que nos rodea, el campo del poniente almeriense conocido como "La Huerta de Europa".Disponemos de gran variedad de carne y pescado.Disponemos de un amplio comedor con capacidad para 100 comensales, resultando un lugar idóneo para reuniones de trabajo.</string>
+    <string name="recursoevento"> El abanico es practicamente infinito ya que nos adecuamos a todas las necesidades del cliente ofertando nuestros recursos y buscando los solicitados por el cliente si no disponemos de ellos.
+Realizamos tanto aniversarios, bodas, ceremonias civiles, comuniones......como desperdidas de soltero/a, cumpleaños, comidas de empresa, reuniones de trabajo, congresos,...etc.</string>
+    <string name="recursoinsta">El hotel ofrece 44 habitacioines de las cuales 20 disponen de cochera individual para su mayor comodidad, y una Suite Junior. Todas ellas están creadas uniendo la sencillez y el confort para que el descanso sea perfecto</string>
+    <string name="instalaciones">TV vía Satélite,  Baño completo con secador de pelo,  Aire Acondicionado / calefacción</string>
+    <string name="servicios">Parking privado gratuito, Piscina,  Parque Infantil, TerInternet Gratuito,  Consigna,  Servicio de lavandería,  Café-Bar y restaurante,  Sala de reuniones/audiovisuales.</string>
+    <string name="interes">Se caracteriza por tener un turismo poco masificado por lo que es idóneo tanto para escapadas de fin de semana como para vacaciones de varios días.Algunas de estas imágenes describen nuestros lugares preferidos.</string>
+</resources>
