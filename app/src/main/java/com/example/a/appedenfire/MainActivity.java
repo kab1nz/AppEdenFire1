@@ -7,14 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    Button btnInicio,btnevento,btngeleria,btnhabi,btninstalaciones,btnlugar,btnoferta,btnrestaurante;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    Button btnInicio, btnevento, btngeleria, btnhabi, btninstalaciones, btnlugar, btnoferta, btnrestaurante;
     ImageView btnlogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*
         btnInicio = findViewById(R.id.btninfo1);
         btnInicio.setOnClickListener(this);
         btnevento=findViewById(R.id.btnevento);
@@ -90,11 +91,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
+*/
 
-    @Override
-    public void onClick(View view) {
-
-    }
 /*
     @Override
     public void onClick(View view) {
@@ -136,4 +134,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
      */
+    }
+
+    @Override
+    public void onClick(View view) {
+
+    }
 }

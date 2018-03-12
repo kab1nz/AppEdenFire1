@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">AppEden</string>
-    <string name="ELeden">Hotel El Edén</string>
+    <string name="app_name1">AppEden</string>
+    <string name="ELeden1">Hotel El Edén</string>
     <string name="toolbarTitle">Información</string>
     <string name="informacion">En pleno corazón del poniente Almeriense nace "El Edén", un hotel que se distingue por el trato familiar que dan a todos los huéspedes que quieran disfrutar de sus instalaciones.
 </string>
@@ -20,4 +20,5 @@ Realizamos tanto aniversarios, bodas, ceremonias civiles, comuniones......como d
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="app_name">El Eden</string>
 </resources>

@@ -2,6 +2,7 @@ package com.example.a.appedenfire;
 
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,11 +26,19 @@ import com.example.a.appedenfire.Fragments.InstalacionesFragment;
 import com.example.a.appedenfire.Fragments.LugarFragment;
 import com.example.a.appedenfire.Fragments.OfertaFragment;
 import com.example.a.appedenfire.Fragments.RestauranteFragment;
+import com.hitomi.cmlibrary.CircleMenu;
+import com.hitomi.cmlibrary.OnMenuSelectedListener;
 
 public class Main2Activity extends AppCompatActivity
 
         implements NavigationView.OnNavigationItemSelectedListener {
-
+        String arrayName[]= {
+                "Información",
+                "Habitaciones",
+                "Lugar de Interés",
+                "Ofertas",
+                "Login"
+        };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +46,27 @@ public class Main2Activity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button btnInicio,btnevento,btngeleria,btnhabi,btninstalaciones,btnlugar,btnoferta,btnrestaurante;
+        Button btnInicio, btnevento, btngeleria, btnhabi, btninstalaciones, btnlugar, btnoferta, btnrestaurante;
         ImageView btnlogin;
+        CircleMenu circleMenu =(CircleMenu)findViewById(R.id.circle_menu);
+        circleMenu.setMainMenu(Color.parseColor("#CDCDCD"),R.drawable.ic_add_black_24dp,R.drawable.ic_clear)
+            .addSubMenu(Color.parseColor("#250CFF"),R.drawable.ic_info)
+                .addSubMenu(Color.parseColor("#6d4c41"),R.drawable.ic_cama_de_matrimonio)
+                .addSubMenu(Color.parseColor("#250CFF"),R.drawable.ic_herramienta_de_punto_de_aguja_para_mapas)
+                .addSubMenu(Color.parseColor("#FF0000"),R.drawable.ic_alerta_simbolo_dibujado_a_mano)
+                .addSubMenu(Color.parseColor("#03a9f4"),R.drawable.ic_info)
+                .addSubMenu(Color.parseColor("#1a237e"),R.drawable.ic_user)
+        .setOnMenuSelectedListener(new OnMenuSelectedListener() {
+            @Override
+            public void onMenuSelected(int i) {
+
+            }
+        });
+
+
+
+
+                /*
         btnInicio = findViewById(R.id.btninfo1);
         btnevento=findViewById(R.id.btnevento);
         btngeleria=findViewById(R.id.btngaleria);
@@ -48,6 +76,7 @@ public class Main2Activity extends AppCompatActivity
         btnoferta=findViewById(R.id.btnoferta);
         btnrestaurante=findViewById(R.id.btnrestaurante);
         btnlogin=findViewById(R.id.btnlogin);
+        */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -57,6 +86,7 @@ public class Main2Activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        /*
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,7 +151,8 @@ public class Main2Activity extends AppCompatActivity
             }
         });
     }
-
+*/
+    }
 
     @Override
     public void onBackPressed() {
