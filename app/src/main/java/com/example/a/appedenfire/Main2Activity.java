@@ -1,6 +1,7 @@
 package com.example.a.appedenfire;
 
 import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.a.appedenfire.Fragments.EventosFragment;
 import com.example.a.appedenfire.Fragments.HabitacionFragment;
@@ -24,6 +27,7 @@ import com.example.a.appedenfire.Fragments.OfertaFragment;
 import com.example.a.appedenfire.Fragments.RestauranteFragment;
 
 public class Main2Activity extends AppCompatActivity
+
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -33,7 +37,17 @@ public class Main2Activity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        Button btnInicio,btnevento,btngeleria,btnhabi,btninstalaciones,btnlugar,btnoferta,btnrestaurante;
+        ImageView btnlogin;
+        btnInicio = findViewById(R.id.btninfo1);
+        btnevento=findViewById(R.id.btnevento);
+        btngeleria=findViewById(R.id.btngaleria);
+        btnhabi=findViewById(R.id.btnhabi);
+        btninstalaciones=findViewById(R.id.btninstalaciones);
+        btnlugar=findViewById(R.id.btnlugar);
+        btnoferta=findViewById(R.id.btnoferta);
+        btnrestaurante=findViewById(R.id.btnrestaurante);
+        btnlogin=findViewById(R.id.btnlogin);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -43,7 +57,71 @@ public class Main2Activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        btnlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent e = new Intent(Main2Activity.this,Admin.class);
+                startActivity(e);
+            }
+        });
+        btnInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent e = new Intent(Main2Activity.this,InicioActivity.class);
+                startActivity(e);
+            }
+        });
+        btnevento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent e = new Intent(Main2Activity.this,EventosActivity.class);
+                startActivity(e);
+            }
+        });
+        btngeleria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent e = new Intent(Main2Activity.this,InicioActivity.class);
+                startActivity(e);
+            }
+        });
+        btnhabi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent e = new Intent(Main2Activity.this,HabitacionActivity.class);
+                startActivity(e);
+            }
+        });
+        btninstalaciones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent e = new Intent(Main2Activity.this,InstalacionServiciosActivity.class);
+                startActivity(e);
+            }
+        });
+        btnlugar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent e = new Intent(Main2Activity.this,LugarActivity.class);
+                startActivity(e);
+            }
+        });
+        btnoferta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent e = new Intent(Main2Activity.this,OfertaActivity.class);
+                startActivity(e);
+            }
+        });
+        btnrestaurante.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent e = new Intent(Main2Activity.this,RestauranteActivity.class);
+                startActivity(e);
+            }
+        });
     }
+
 
     @Override
     public void onBackPressed() {
@@ -88,11 +166,7 @@ public class Main2Activity extends AppCompatActivity
                     .replace(R.id.content_fragment
                             ,new InforFragment())
                     .commit();
-        } else if (id == R.id.nav_ini) {
-            fragmen.beginTransaction()
-                    .replace(R.id.content_fragment
-                            ,new InicioFragment())
-                    .commit();
+
 
         } else if (id == R.id.nav_eventos) {
             fragmen.beginTransaction()

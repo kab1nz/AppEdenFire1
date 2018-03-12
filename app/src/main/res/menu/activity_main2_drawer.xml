@@ -4,34 +4,31 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_ini"
-            android:icon="@drawable/ic_info"
-            android:title="Inicio" />
+
         <item
         android:id="@+id/nav_info"
         android:icon="@drawable/ic_info"
         android:title="Información" />
         <item
             android:id="@+id/nav_eventos"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_calendario_con_un_reloj_herramientas_de_tiempo"
             android:title="Eventos" />
         <item
             android:id="@+id/nav_restaurante"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_restaurante_simbolo_circular_de_cubiertos_de_una_cuchara_y_un_tenedor_en_un_circulo"
             android:title="Restaurante" />
 
         <item
             android:id="@+id/nav_instalaciones"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_cliente"
             android:title="Instalaciones y Servicios" />
         <item
             android:id="@+id/nav_galeria"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_galeria"
             android:title="Galeria de Eventos" />
         <item
             android:id="@+id/nav_lugar"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_herramienta_de_punto_de_aguja_para_mapas"
             android:title="Lugar de Interés" />
     </group>
 
@@ -39,12 +36,12 @@
         <menu>
             <item
                 android:id="@+id/nav_habitacion"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_cama_de_matrimonio"
                 android:title="Habitacion y Suites" />
             <item
                 android:id="@+id/nav_oferta"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:icon="@drawable/ic_alerta_simbolo_dibujado_a_mano"
+                android:title="Ofertas Especiales" />
         </menu>
     </item>
 
