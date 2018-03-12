@@ -2,21 +2,21 @@ package com.example.a.appedenfire;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.ImageView;
+import android.support.v7.widget.Toolbar;
 
 public class EventosActivity extends AppCompatActivity {
     ImageView flecha1;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eventos);
-        flecha1 =(ImageView)findViewById(R.id.flecha1);
-        flecha1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        toolbar = findViewById(R.id.toolbarinfo3);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Información");
+        toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

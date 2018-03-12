@@ -2,6 +2,7 @@ package com.example.a.appedenfire;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -11,12 +12,11 @@ public class InstalacionServiciosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instalacionesservicios);
-        flecha3 = findViewById(R.id.flecha3);
-        flecha3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        Toolbar toolbar = findViewById(R.id.toolbarinfo);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Información");
+        toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

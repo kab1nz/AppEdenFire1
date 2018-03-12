@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -43,7 +44,12 @@ public class ReservaHabitacionActivity extends AppCompatActivity {
         cbestandar=findViewById(R.id.rbEstandar);
         etemail=findViewById(R.id.etemail);
         fab=findViewById(R.id.fab);
-
+        Toolbar toolbar = findViewById(R.id.toolbarinfo6);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Información");
+        toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

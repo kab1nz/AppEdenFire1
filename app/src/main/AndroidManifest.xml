@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.a.appedenfire">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,17 +22,44 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InicioActivity" />
-        <activity android:name=".HabitacionActivity" />
-        <activity android:name=".RestauranteActivity" />
-        <activity android:name=".EventosActivity" />
-        <activity android:name=".OfertaActivity" />
-        <activity android:name=".ReservaOfertaActivity" />
-        <activity android:name=".InstalacionServiciosActivity" />
-        <activity android:name=".LugarActivity" />
-        <activity android:name=".ReservaHabitacionActivity" />
-        <activity android:name=".Admin" />
+        <activity android:name=".InicioActivity"
+            android:parentActivityName=".Main2Activity"
+            />
+        <activity android:name=".HabitacionActivity"
+            android:parentActivityName=".Main2Activity"
 
-    </application>
+            />
+        <activity android:name=".RestauranteActivity"
+            android:parentActivityName=".Main2Activity"
+
+            />
+        <activity android:name=".EventosActivity"
+            android:parentActivityName=".Main2Activity"
+            />
+        <activity android:name=".OfertaActivity"
+            android:parentActivityName=".Main2Activity"
+
+            />
+        <activity android:name=".ReservaOfertaActivity"
+            android:parentActivityName=".OfertaActivity"
+
+            />
+        <activity android:name=".InstalacionServiciosActivity"
+            android:parentActivityName=".Main2Activity"
+
+            />
+        <activity android:name=".LugarActivity"
+            android:parentActivityName=".Main2Activity"
+
+            />
+        <activity android:name=".ReservaHabitacionActivity"
+            android:parentActivityName=".HabitacionActivity"
+            />
+        <activity android:name=".Admin" />
+        <activity android:name=".LoginActivity"
+            android:parentActivityName=".Main2Activity"
+
+
+        />    </application>
 
 </manifest>

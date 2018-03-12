@@ -3,6 +3,7 @@ package com.example.a.appedenfire;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -37,6 +38,12 @@ public class ReservaOfertaActivity extends AppCompatActivity {
         etfsalida=findViewById(R.id.etfsalida);
         etnhabi=findViewById(R.id.nhabitacio);
         mSubmitButton=findViewById(R.id.faboferta);
+        Toolbar toolbar = findViewById(R.id.toolbarinfo);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Información");
+        toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         flecha6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

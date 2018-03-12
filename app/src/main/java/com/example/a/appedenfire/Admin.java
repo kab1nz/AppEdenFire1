@@ -33,10 +33,6 @@ import java.util.Map;
 
 public class Admin extends AppCompatActivity implements PeticionesFirebase{
     private static final String TAGLOG = "firebase-db ->";
-    TextView labelNombre,labelApellido,labelEmail,labelNhab,labelNfechaentrada,labelNFsalida,labelTipo,labelPrecio;
-    FirebaseRecyclerAdapter mAdapter;
-    Button btnaceptar;
-    String userId ;
     private List<Habitacion>reservaList;
     private ReservaListAdapter reservaListAdapter;
     private FirebaseFirestore firebaseFirestore;
@@ -47,9 +43,7 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
 
         reservaList = new ArrayList<>();
         reservaListAdapter = new ReservaListAdapter(getApplicationContext(),reservaList,this);
-       // DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("eden").child("reserva");
-        ;//se posiciona en el nodo
-      //  userId = databaseReference.push().getKey();
+
         RecyclerView recycler = (RecyclerView) findViewById(R.id.listaReservas);
         recycler.setHasFixedSize(true);
         recycler.setLayoutManager(new LinearLayoutManager(this));
