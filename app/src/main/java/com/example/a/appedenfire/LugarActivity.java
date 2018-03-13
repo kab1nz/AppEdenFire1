@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
 import com.example.a.appedenfire.objetos.Lugar;
+import com.example.a.appedenfire.objetos.LugarAdapter;
 import com.example.a.appedenfire.objetos.ReservaListAdapter;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -21,7 +22,7 @@ import java.util.List;
 public class LugarActivity extends AppCompatActivity {
     private static final String TAGLOG ="Firebase -->" ;
     private List<Lugar> lugarList;
-    private ReservaListAdapter lugarListAdapter;
+    private LugarAdapter lugarListAdapter;
 
 
     @Override
@@ -34,8 +35,6 @@ public class LugarActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        lugarList = new ArrayList<>();
 
         RecyclerView recycler = (RecyclerView) findViewById(R.id.recyclerViewLugar);
         recycler.setHasFixedSize(true);
@@ -77,6 +76,7 @@ public class LugarActivity extends AppCompatActivity {
                         "Buen sitio",
                         4.3,
                         R.drawable.lasnegras));
+        lugarListAdapter = new LugarAdapter(this,lugarList);
         recycler.setAdapter(lugarListAdapter);
 
 

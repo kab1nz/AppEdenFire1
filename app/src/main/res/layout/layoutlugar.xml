@@ -8,11 +8,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/cardviewlugar"
-        android:layout_margin="5dp">
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:padding="8dp">
 
             <ImageView
@@ -23,7 +28,7 @@
 
             <TextView
                 android:id="@+id/nombreLugar"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@id/imageLugar"
@@ -33,7 +38,7 @@
 
             <TextView
                 android:id="@+id/descripcionLugar"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/nombreLugar"
                 android:layout_marginLeft="5dp"
@@ -56,7 +61,6 @@
                 android:text="4.7"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
                 android:textStyle="bold" />
-
 
 
         </RelativeLayout>
