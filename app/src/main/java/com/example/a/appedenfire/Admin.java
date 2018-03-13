@@ -143,7 +143,6 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
                     }
                 });
 
-        //Email
         //Resol
 
         String correousuario = reservaList.get(pos).getEmail();
