@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -24,42 +23,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InicioActivity"
-            android:parentActivityName=".Main2Activity"
-            />
-        <activity android:name=".HabitacionActivity"
-            android:parentActivityName=".Main2Activity"
-
-            />
-        <activity android:name=".RestauranteActivity"
-            android:parentActivityName=".Main2Activity"
-
-            />
-        <activity android:name=".EventosActivity"
-            android:parentActivityName=".Main2Activity"
-            />
-        <activity android:name=".OfertaActivity"
-            android:parentActivityName=".Main2Activity"
-
-            />
-        <activity android:name=".ReservaOfertaActivity"
-            android:parentActivityName=".OfertaActivity"
-
-            />
-        <activity android:name=".InstalacionServiciosActivity"
-            android:parentActivityName=".Main2Activity"
-
-            />
-        <activity android:name=".LugarActivity"
-            android:parentActivityName=".Main2Activity"
-            />
-        <activity android:name=".ReservaHabitacionActivity"
-            android:parentActivityName=".HabitacionActivity"
-            />
+        <activity
+            android:name=".InicioActivity"
+            android:parentActivityName=".Main2Activity" />
+        <activity
+            android:name=".HabitacionActivity"
+            android:parentActivityName=".Main2Activity" />
+        <activity
+            android:name=".RestauranteActivity"
+            android:parentActivityName=".Main2Activity" />
+        <activity
+            android:name=".EventosActivity"
+            android:parentActivityName=".Main2Activity" />
+        <activity
+            android:name=".OfertaActivity"
+            android:parentActivityName=".Main2Activity" />
+        <activity
+            android:name=".ReservaOfertaActivity"
+            android:parentActivityName=".OfertaActivity" />
+        <activity
+            android:name=".InstalacionServiciosActivity"
+            android:parentActivityName=".Main2Activity" />
+        <activity
+            android:name=".LugarActivity"
+            android:parentActivityName=".Main2Activity" />
+        <activity
+            android:name=".ReservaHabitacionActivity"
+            android:parentActivityName=".HabitacionActivity" />
         <activity android:name=".Admin" />
-        <activity android:name=".LoginActivity"
-            android:parentActivityName=".Main2Activity"
-            />
+        <activity
+            android:name=".LoginActivity"
+            android:parentActivityName=".Main2Activity" />
     </application>
 
 </manifest>

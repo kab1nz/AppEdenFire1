@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 
 import com.hitomi.cmlibrary.CircleMenu;
@@ -73,6 +74,7 @@ public class Main2Activity extends AppCompatActivity
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
                     @Override
                     public void onMenuSelected(int i) {
+
                         switch (i){
                             case 0:
                                 Intent a = new Intent(Main2Activity.this,InicioActivity.class);
@@ -98,7 +100,6 @@ public class Main2Activity extends AppCompatActivity
                         }
                     }
                 });
-
     }
 
     @Override
@@ -166,18 +167,12 @@ public class Main2Activity extends AppCompatActivity
                 Intent he = new Intent(Main2Activity.this,OfertaActivity.class);
                 startActivity(he);
                 break;
-            case R.id.nav_galeria:
-                Intent hae = new Intent(Main2Activity.this,InicioActivity.class);
-                startActivity(hae);
-                break;
+
             case R.id.nav_lugar:
                 Intent haee = new Intent(Main2Activity.this,LugarActivity.class);
                 startActivity(haee);
                 break;
-            case R.id.nav_login:
-                Intent haeea = new Intent(Main2Activity.this,LoginActivity.class);
-                startActivity(haeea);
-                break;
+
 
         }
 

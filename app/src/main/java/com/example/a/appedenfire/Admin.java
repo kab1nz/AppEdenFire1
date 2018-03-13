@@ -134,8 +134,10 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
                         reservaList.get(pos).setReserva(1);
                         reservaListAdapter.notifyDataSetChanged();
 
+
                     }
                 })
+
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
@@ -143,38 +145,8 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
                     }
                 });
 
-        //Resol
 
-        String correousuario = reservaList.get(pos).getEmail();
-        String nombreusuario = reservaList.get(pos).getNombre();
 
-        Properties properties = new Properties();
-        properties.put("mail.smtp.host","smtp.googlemail.com");
-        properties.put("mail.smtp.socketFactory.port","465");
-        properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLocketFactory");
-        properties.put("mail.smtp.auth","true");
-        properties.put("mail.smtp.port","465");
-        final String correo="kabinfor@gmail.com";
-        final String contra="colorin69";
-        final String mensaje ="Buenas : "+nombreusuario + "su reserva ha sido aceptada.";
-        try{
-            session=Session.getDefaultInstance(properties, new Authenticator() {
-                @Override
-                protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication(correo,contra);
-                }
-            });
-            if(session!=null){
-                javax.mail.Message message = new MimeMessage(session);
-                message.setFrom(new InternetAddress(correo));
-                message.setSubject("Reserva Hotel EL EDEN");
-                message.setRecipients(javax.mail.Message.RecipientType.TO,InternetAddress.parse(correousuario));
-                message.setContent(mensaje,"text/html; charset=utf-8");
-                Transport.send(message);
-            }
-        }catch (Exception e){
-
-        }
 
 
     }
@@ -183,6 +155,8 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
 
     @Override
     public void rechazarReserva(String id, final int pos) {
+
+
         DocumentReference washingtonRef = firebaseFirestore.collection("Eden").document(id);
 
         washingtonRef
@@ -203,4 +177,28 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
                     }
                 });
     }
-}
+
+    @Override
+    public void cancelarReserva(String id, final int pos) {
+        DocumentReference washingtonRef = firebaseFirestore.collection("Eden").document(id);
+
+        washingtonRef
+                .update("reserva", 0)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("firebase-->", "DocumentSnapshot successfully updated!");
+                        reservaList.get(pos).setReserva(0);
+
+                        reservaListAdapter.notifyDataSetChanged();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("firebase-->", "Error updating document", e);
+                    }
+                });
+    }
+    }
+

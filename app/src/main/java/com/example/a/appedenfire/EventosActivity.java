@@ -14,7 +14,7 @@ public class EventosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_eventos);
         toolbar = findViewById(R.id.toolbarinfo3);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Información");
+        getSupportActionBar().setTitle("Eventos");
         toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -42,7 +42,13 @@ public class Habitacion extends UserId {
         this.tipo = tipo;
         this.estado=reserva;
     }
+    public boolean comprobarCampos(String nombre, String apellido, String email, String fechaentrada, String fechasalida, int nhabitaciones, int precio, String tipo){
 
+        if(nombre.isEmpty()||apellido.isEmpty()||email.isEmpty()||fechaentrada.isEmpty()||fechasalida.isEmpty()||String.valueOf(nhabitaciones).isEmpty() || String.valueOf(precio).isEmpty()){
+            return false;
+        }else
+            return true;
+    }
     public String getKey() {
         return key;
     }

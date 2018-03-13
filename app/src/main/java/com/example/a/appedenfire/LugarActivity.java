@@ -31,7 +31,7 @@ public class LugarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lugar);
         Toolbar toolbar = findViewById(R.id.toolbarinfo);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Información");
+        getSupportActionBar().setTitle("Lugares");
         toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

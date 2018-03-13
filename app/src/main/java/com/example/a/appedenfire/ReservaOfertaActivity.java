@@ -1,18 +1,28 @@
 package com.example.a.appedenfire;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 
 import com.example.a.appedenfire.objetos.FireBaseReferences;
 import com.example.a.appedenfire.objetos.Habitacion;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ReservaOfertaActivity extends AppCompatActivity {
     ImageView flecha6;
@@ -69,15 +79,58 @@ public class ReservaOfertaActivity extends AppCompatActivity {
         final String email = etmail.getText().toString();
         final String fechaentrada = etfentrada.getText().toString();
         final String fechasalida = etfsalida.getText().toString();
-        final int nhabitaciones = Integer.valueOf(etnhabi.getText().toString());
-        final int precio = nhabitaciones*50;
-        String tipo="estandar";
-        int reserva=0;
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //seguir por aqui ******************************
-        Habitacion habitacion = new Habitacion(nombre,apellido,email,fechaentrada,fechasalida,nhabitaciones,precio,tipo,reserva);
-        DatabaseReference myRef = database.getReference(FireBaseReferences.NOMBRE_REFERENCIAR);
-        myRef.child(FireBaseReferences.RESERVA_REFERENCIAR).push().setValue(habitacion);
+        int nhabitaciones=0;
+        int precio=0;
+        try{
+            nhabitaciones = Integer.valueOf(etnhabi.getText().toString());
+             precio=45*nhabitaciones;
 
+        }catch(NumberFormatException ex){ // handle your exception
+        }
+        String tipo = "estandar";
+        int reserva = 0;
+        Habitacion com = new Habitacion();
+        boolean bandera = true;
+        bandera = com.comprobarCampos(nombre, apellido, email, fechaentrada, fechasalida, nhabitaciones, precio, tipo);
+        if (bandera == true) {
+            FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+            Map<String, Object> data = new HashMap<>();
+            data.put("nombre", nombre);
+            data.put("apellido", apellido);
+            data.put("email", email);
+            data.put("fechaentrada", fechaentrada);
+            data.put("fechasalida", fechasalida);
+            data.put("nhabitaciones", nhabitaciones);
+            data.put("precio", precio);
+            data.put("tipo", tipo);
+            data.put("reserva", 0);
+
+            firebaseFirestore.collection("Eden")
+                    .add(data)
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error adding document", e);
+                        }
+                    });
+
+
+        }else{
+            Toast.makeText(getApplicationContext(),"Campos nulos",Toast.LENGTH_LONG).show();
+            etnombre.setText("");
+            etape.setText("");
+            etmail.setText("");
+            etfentrada.setText("");
+            etfsalida.setText("");
+            etnhabi.setText("");
+            precio=0;
+            bandera=false;
+        }
     }
 }

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 
 import com.example.a.appedenfire.objetos.FireBaseReferences;
@@ -28,6 +29,8 @@ public class ReservaHabitacionActivity extends AppCompatActivity {
     EditText etnombre,ettel,etfentrada,etfsalida,etapellido,etnhab,etemail;
     RadioButton cbsuite,cbgeneral,cbestandar;
     FloatingActionButton fab;
+    int precio = 0;
+
     private FirebaseFirestore firebaseFirestore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +49,7 @@ public class ReservaHabitacionActivity extends AppCompatActivity {
         fab=findViewById(R.id.fab);
         Toolbar toolbar = findViewById(R.id.toolbarinfo6);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Información");
+        getSupportActionBar().setTitle("Reserva Habitación");
         toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -67,52 +70,70 @@ public class ReservaHabitacionActivity extends AppCompatActivity {
         final String email = etemail.getText().toString();
         final String fechaentrada = etfentrada.getText().toString();
         final String fechasalida = etfsalida.getText().toString();
-        final int nhabitaciones = Integer.valueOf(etnhab.getText().toString());
-        int precio=0;
-        String tipo="";
-
-        if (cbestandar.isChecked()){
-            precio=75*nhabitaciones;
-            tipo="estandar";
+        int nhabitaciones=0;
+        try{
+              nhabitaciones = Integer.valueOf(etnhab.getText().toString());
+        }catch(NumberFormatException ex){ // handle your exception
         }
-        if(cbgeneral.isChecked()){
-            precio=50*nhabitaciones;
-            tipo="general";
+        String tipo = "";
 
+        if (cbestandar.isChecked()) {
+            precio = 75 * nhabitaciones;
+            tipo = "estandar";
         }
-        if(cbsuite.isChecked()){
-            precio=150*nhabitaciones;
-            tipo="suite";
+        if (cbgeneral.isChecked()) {
+            precio = 50 * nhabitaciones;
+            tipo = "general";
 
         }
+        if (cbsuite.isChecked()) {
+            precio = 150 * nhabitaciones;
+            tipo = "suite";
 
-        firebaseFirestore = FirebaseFirestore.getInstance();
-        Map<String, Object> data = new HashMap<>();
-        data.put("nombre", nombre);
-        data.put("apellido", apellido);
-        data.put("email", email);
-        data.put("fechaentrada", fechaentrada);
-        data.put("fechasalida", fechasalida);
-        data.put("nhabitaciones", nhabitaciones);
-        data.put("precio", precio);
-        data.put("tipo", tipo);
-        data.put("reserva", 0);
+        }
+        Habitacion com = new Habitacion();
+        boolean bandera = true;
+        bandera = com.comprobarCampos(nombre, apellido, email, fechaentrada, fechasalida, nhabitaciones, precio, tipo);
+        if (bandera == true) {
 
-        firebaseFirestore.collection("Eden")
-                .add(data)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
+            firebaseFirestore = FirebaseFirestore.getInstance();
+            Map<String, Object> data = new HashMap<>();
+            data.put("nombre", nombre);
+            data.put("apellido", apellido);
+            data.put("email", email);
+            data.put("fechaentrada", fechaentrada);
+            data.put("fechasalida", fechasalida);
+            data.put("nhabitaciones", nhabitaciones);
+            data.put("precio", precio);
+            data.put("tipo", tipo);
+            data.put("reserva", 0);
 
+            firebaseFirestore.collection("Eden")
+                    .add(data)
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.w(TAG, "Error adding document", e);
+                        }
+                    });
+
+        } else {
+            Toast.makeText(getApplicationContext(), "Campos nulos", Toast.LENGTH_LONG).show();
+            etnombre.setText("");
+            etapellido.setText("");
+            etemail.setText("");
+            etfentrada.setText("");
+            etfsalida.setText("");
+            etnhab.setText("");
+            precio = 0;
+            bandera=false;
+        }
     }
 
 }

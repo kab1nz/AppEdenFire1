@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.MediaCas;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -16,16 +18,29 @@ import android.widget.Toast;
 
 
 import com.example.a.appedenfire.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  * Created by a on 10/03/2018.
  */
 
 public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.ViewHolder> {
+    Session session=null;
     List<Habitacion> reservaList;
     PeticionesFirebase listener;
     public Context context;
@@ -54,27 +69,24 @@ public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.
         final String user_id = reservaList.get(position).userId;
         Button btnaceptar = holder.mView.findViewById(R.id.btnaceptar);
         Button btnrechazar = holder.mView.findViewById(R.id.btnrechazar);
-
+        Button btncancelar=holder.mView.findViewById(R.id.btncancelar);
         btnaceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listener.aceptarReserva(user_id, position);
 
-                /*
-                String recipienteList = reservaList.get(position).getEmail();
 
-                String subject = "Prueba";
-                String message = "Mensaje de prueba";
 
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_EMAIL,recipienteList);
-                intent.putExtra(Intent.EXTRA_SUBJECT,subject);
-                intent.putExtra(Intent.EXTRA_TEXT,message);
 
-                intent.setType("message/rfc822");
+
+/*
+                SendMail sm = new SendMail(this, "ismaelborregoinfor@gmail.com", "asdasd", "Este es el mensaje");
+
+                //Executing sendmail to send email
+                sm.execute();
                 */
-
             }
+
         });
 
         btnrechazar.setOnClickListener(new View.OnClickListener() {
@@ -83,15 +95,21 @@ public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.
               listener.rechazarReserva(user_id,position);
             }
         });
+        btncancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.cancelarReserva(user_id,position);
+            }
+        });
         int re = reservaList.get(position).getReserva();
 
         if(re==1){
-            holder.cv.setBackgroundColor(context.getResources().getColor(R.color.verde));
+            holder.mView.setBackgroundColor(context.getResources().getColor(R.color.verde));
         } if(re==0){
-            holder.cv.setBackgroundColor(0xFFFFFF);
+            holder.mView.setBackgroundColor(0xFFFFFF);
 
         } if(re==2){
-            holder.cv.setBackgroundColor(context.getResources().getColor(R.color.rojo));
+            holder.mView.setBackgroundColor(context.getResources().getColor(R.color.rojo));
 
         }
 
@@ -132,4 +150,6 @@ public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.
 
         }
     }
+
+
 }

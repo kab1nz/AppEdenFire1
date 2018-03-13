@@ -7,5 +7,7 @@ package com.example.a.appedenfire.objetos;
 public interface PeticionesFirebase {
     public void aceptarReserva(String id,int pos);
     public void rechazarReserva(String id,int pos);
+    public void cancelarReserva(String id,int pos);
+
 
 }

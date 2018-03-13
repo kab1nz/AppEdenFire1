@@ -22,18 +22,12 @@
             android:id="@+id/nav_instalaciones"
             android:icon="@drawable/ic_cliente"
             android:title="Instalaciones y Servicios" />
-        <item
-            android:id="@+id/nav_galeria"
-            android:icon="@drawable/ic_galeria"
-            android:title="Galeria de Eventos" />
+
         <item
             android:id="@+id/nav_lugar"
             android:icon="@drawable/ic_herramienta_de_punto_de_aguja_para_mapas"
             android:title="Lugar de Interés" />
-        <item
-            android:id="@+id/nav_login"
-            android:icon="@drawable/ic_herramienta_de_punto_de_aguja_para_mapas"
-            android:title="Login" />
+
     </group>
 
     <item android:title="Reservas">

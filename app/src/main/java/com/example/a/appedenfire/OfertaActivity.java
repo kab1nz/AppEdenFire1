@@ -18,7 +18,7 @@ public class OfertaActivity extends AppCompatActivity {
         btnreserva = (Button)findViewById(R.id.btnreserva);
         Toolbar toolbar = findViewById(R.id.toolbarinfo5);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Información");
+        getSupportActionBar().setTitle("Oferta");
         toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

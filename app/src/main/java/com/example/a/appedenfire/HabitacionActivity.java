@@ -27,7 +27,7 @@ public class HabitacionActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbarinfo4);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Información");
+        getSupportActionBar().setTitle("Habitacion");
         toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
