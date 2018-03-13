@@ -174,6 +174,10 @@ public class Main2Activity extends AppCompatActivity
                 Intent haee = new Intent(Main2Activity.this,LugarActivity.class);
                 startActivity(haee);
                 break;
+            case R.id.nav_login:
+                Intent haeea = new Intent(Main2Activity.this,LoginActivity.class);
+                startActivity(haeea);
+                break;
 
         }
 

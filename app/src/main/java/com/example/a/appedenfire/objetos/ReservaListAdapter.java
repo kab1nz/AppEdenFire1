@@ -60,6 +60,19 @@ public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.
             public void onClick(View view) {
                 listener.aceptarReserva(user_id, position);
 
+                /*
+                String recipienteList = reservaList.get(position).getEmail();
+
+                String subject = "Prueba";
+                String message = "Mensaje de prueba";
+
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_EMAIL,recipienteList);
+                intent.putExtra(Intent.EXTRA_SUBJECT,subject);
+                intent.putExtra(Intent.EXTRA_TEXT,message);
+
+                intent.setType("message/rfc822");
+                */
 
             }
         });
@@ -83,6 +96,8 @@ public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.
         }
 
     }
+
+
 
     @Override
     public int getItemCount() {

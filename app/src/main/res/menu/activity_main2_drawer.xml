@@ -30,6 +30,10 @@
             android:id="@+id/nav_lugar"
             android:icon="@drawable/ic_herramienta_de_punto_de_aguja_para_mapas"
             android:title="Lugar de Interés" />
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/ic_herramienta_de_punto_de_aguja_para_mapas"
+            android:title="Login" />
     </group>
 
     <item android:title="Reservas">
