@@ -50,7 +50,6 @@
             />
         <activity android:name=".LugarActivity"
             android:parentActivityName=".Main2Activity"
-
             />
         <activity android:name=".ReservaHabitacionActivity"
             android:parentActivityName=".HabitacionActivity"
@@ -58,8 +57,7 @@
         <activity android:name=".Admin" />
         <activity android:name=".LoginActivity"
             android:parentActivityName=".Main2Activity"
-
-
-        />    </application>
+            />
+    </application>
 
 </manifest>

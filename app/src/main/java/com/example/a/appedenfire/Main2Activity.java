@@ -11,18 +11,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
-import ca.moosebytes.labelview.LabelView;
+
 
 public class Main2Activity extends AppCompatActivity
 
@@ -34,51 +29,16 @@ public class Main2Activity extends AppCompatActivity
                 "Ofertas",
                 "Login"
         };
-        LabelView label;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar123);
         setSupportActionBar(toolbar);
 
 
 
-        CircleMenu circleMenu =(CircleMenu)findViewById(R.id.circle_menu);
-        circleMenu.setMainMenu(Color.parseColor("#CDCDCD"),R.drawable.ic_add_black_24dp,R.drawable.ic_clear)
-            .addSubMenu(Color.parseColor("#250CFF"),R.drawable.ic_info)
-                .addSubMenu(Color.parseColor("#6d4c41"),R.drawable.ic_cama_de_matrimonio)
-                .addSubMenu(Color.parseColor("#250CFF"),R.drawable.ic_herramienta_de_punto_de_aguja_para_mapas)
-                .addSubMenu(Color.parseColor("#FF0000"),R.drawable.ic_alerta_simbolo_dibujado_a_mano)
-                .addSubMenu(Color.parseColor("#1a237e"),R.drawable.ic_user)
-        .setOnMenuSelectedListener(new OnMenuSelectedListener() {
-            @Override
-            public void onMenuSelected(int i) {
-                switch (i){
-                    case 0:
-                        Intent a = new Intent(Main2Activity.this,InicioActivity.class);
-                        startActivity(a);
-                        break;
-                    case 1:
-                        Intent b = new Intent(Main2Activity.this,HabitacionActivity.class);
-                        startActivity(b);
-                        break;
-                    case 2:
-                        Intent c = new Intent(Main2Activity.this,LugarActivity.class);
-                        startActivity(c);
-                        break;
-                    case 3:
-                        Intent d = new Intent(Main2Activity.this,OfertaActivity.class);
-                        startActivity(d);
-                        break;
-                    case 4:
-                        Intent e = new Intent(Main2Activity.this,LoginActivity.class);
-                        startActivity(e);
-                        break;
 
-                }
-            }
-        });
 
 
 
@@ -103,6 +63,41 @@ public class Main2Activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        CircleMenu circleMenu =(CircleMenu)findViewById(R.id.circle_menu);
+        circleMenu.setMainMenu(Color.parseColor("#CDCDCD"),R.drawable.ic_add_black_24dp,R.drawable.ic_clear)
+                .addSubMenu(Color.parseColor("#250CFF"),R.drawable.ic_info)
+                .addSubMenu(Color.parseColor("#6d4c41"),R.drawable.ic_cama_de_matrimonio)
+                .addSubMenu(Color.parseColor("#250CFF"),R.drawable.ic_herramienta_de_punto_de_aguja_para_mapas)
+                .addSubMenu(Color.parseColor("#FF0000"),R.drawable.ic_alerta_simbolo_dibujado_a_mano)
+                .addSubMenu(Color.parseColor("#1a237e"),R.drawable.ic_user)
+                .setOnMenuSelectedListener(new OnMenuSelectedListener() {
+                    @Override
+                    public void onMenuSelected(int i) {
+                        switch (i){
+                            case 0:
+                                Intent a = new Intent(Main2Activity.this,InicioActivity.class);
+                                startActivity(a);
+                                break;
+                            case 1:
+                                Intent b = new Intent(Main2Activity.this,HabitacionActivity.class);
+                                startActivity(b);
+                                break;
+                            case 2:
+                                Intent c = new Intent(Main2Activity.this,LugarActivity.class);
+                                startActivity(c);
+                                break;
+                            case 3:
+                                Intent d = new Intent(Main2Activity.this,OfertaActivity.class);
+                                startActivity(d);
+                                break;
+                            case 4:
+                                Intent e = new Intent(Main2Activity.this,LoginActivity.class);
+                                startActivity(e);
+                                break;
+
+                        }
+                    }
+                });
 
     }
 

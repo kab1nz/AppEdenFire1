@@ -5,14 +5,14 @@ package com.example.a.appedenfire.objetos;
  */
 
 public class Lugar extends UserId{
-    private String id;
+    private int id;
     private String nombreLugar;
     private String descripcionLugar;
-    private String ratingLugar;
-    private String image;
+    private double ratingLugar;
+    private int image;
 
     public Lugar(){}
-    public Lugar(String id, String nombreLugar, String descripcionLugar, String ratingLugar, String image) {
+    public Lugar(int id, String nombreLugar, String descripcionLugar, double ratingLugar, int image) {
         this.id = id;
         this.nombreLugar = nombreLugar;
         this.descripcionLugar = descripcionLugar;
@@ -20,11 +20,11 @@ public class Lugar extends UserId{
         this.image = image;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -44,19 +44,19 @@ public class Lugar extends UserId{
         this.descripcionLugar = descripcionLugar;
     }
 
-    public String getRatingLugar() {
+    public double getRatingLugar() {
         return ratingLugar;
     }
 
-    public void setRatingLugar(String ratingLugar) {
+    public void setRatingLugar(double ratingLugar) {
         this.ratingLugar = ratingLugar;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 }

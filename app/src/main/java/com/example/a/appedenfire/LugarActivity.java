@@ -40,7 +40,6 @@ public class LugarActivity extends AppCompatActivity {
         RecyclerView recycler = (RecyclerView) findViewById(R.id.recyclerViewLugar);
         recycler.setHasFixedSize(true);
         recycler.setLayoutManager(new LinearLayoutManager(this));
-        recycler.setAdapter(lugarListAdapter);
 
         lugarList = new ArrayList<>();
         lugarList.add(
@@ -50,7 +49,49 @@ public class LugarActivity extends AppCompatActivity {
                         "Buen sitio",
                         4.3,
                         R.drawable.lasnegras));
-        )
+        lugarList.add(
+                new Lugar(
+                        1,
+                        "Las Negras)",
+                        "Buen sitio",
+                        4.3,
+                        R.drawable.lasnegras));
+        lugarList.add(
+                new Lugar(
+                        1,
+                        "Las Negras)",
+                        "Buen sitio",
+                        4.3,
+                        R.drawable.lasnegras));
+        lugarList.add(
+                new Lugar(
+                        1,
+                        "Las Negras)",
+                        "Buen sitio",
+                        4.3,
+                        R.drawable.lasnegras));
+        lugarList.add(
+                new Lugar(
+                        1,
+                        "Las Negras)",
+                        "Buen sitio",
+                        4.3,
+                        R.drawable.lasnegras));
+        recycler.setAdapter(lugarListAdapter);
+
 
     }
-}
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
