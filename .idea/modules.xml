@@ -3,11 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AppEdenFire.iml" filepath="$PROJECT_DIR$/AppEdenFire.iml" />
-      <module fileurl="file://C:\Users\usuario\AndroidStudioProjects\AppEdenFire\AppEdenFire.iml" filepath="C:\Users\usuario\AndroidStudioProjects\AppEdenFire\AppEdenFire.iml" />
       <module fileurl="file://C:\Users\NRINFORMATICA\AndroidStudioProjects\AppEdenFire\AppEdenFire.iml" filepath="C:\Users\NRINFORMATICA\AndroidStudioProjects\AppEdenFire\AppEdenFire.iml" />
+      <module fileurl="file://C:\Users\usuario\AndroidStudioProjects\AppEdenFire\AppEdenFire.iml" filepath="C:\Users\usuario\AndroidStudioProjects\AppEdenFire\AppEdenFire.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\usuario\AndroidStudioProjects\AppEdenFire\app\app.iml" filepath="C:\Users\usuario\AndroidStudioProjects\AppEdenFire\app\app.iml" />
       <module fileurl="file://C:\Users\NRINFORMATICA\AndroidStudioProjects\AppEdenFire\app\app.iml" filepath="C:\Users\NRINFORMATICA\AndroidStudioProjects\AppEdenFire\app\app.iml" />
+      <module fileurl="file://C:\Users\usuario\AndroidStudioProjects\AppEdenFire\app\app.iml" filepath="C:\Users\usuario\AndroidStudioProjects\AppEdenFire\app\app.iml" />
     </modules>
   </component>
 </project>

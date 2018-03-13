@@ -1,6 +1,9 @@
 package com.example.a.appedenfire.objetos;
 
 import android.content.Context;
+import android.content.Intent;
+import android.media.MediaCas;
+import android.net.Uri;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -16,6 +19,7 @@ import com.example.a.appedenfire.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
+import java.util.Properties;
 
 /**
  * Created by a on 10/03/2018.
@@ -54,11 +58,12 @@ public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.
         btnaceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listener.aceptarReserva(user_id,position);
+                listener.aceptarReserva(user_id, position);
 
 
             }
         });
+
         btnrechazar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

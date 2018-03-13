@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 public class Admin extends AppCompatActivity implements PeticionesFirebase{
     private static final String TAGLOG = "firebase-db ->";
@@ -72,6 +73,7 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
 
             }
         });
+
         /*
         mAdapter =
             new FirebaseRecyclerAdapter<Habitacion, ReservaHolder>(
@@ -110,7 +112,6 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
     public void aceptarReserva(String id, final int pos) {
         DocumentReference washingtonRef = firebaseFirestore.collection("Eden").document(id);
 
-// Set the "isCapital" field of the city 'DC'
         washingtonRef
                 .update("reserva", 1)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -128,6 +129,10 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
                         Log.w("firebase-->", "Error updating document", e);
                     }
                 });
+
+        //Email
+
+
     }
 
     @Override
