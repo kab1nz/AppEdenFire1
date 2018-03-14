@@ -19,7 +19,7 @@ public class EventosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_eventos);
         toolbar = findViewById(R.id.toolbarinfo3);
         setSupportActionBar(toolbar);
-        imageView=findViewById(R.id.imageView2);
+        imageView=findViewById(R.id.imageView3);
         getSupportActionBar().setTitle("Eventos");
         toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -35,8 +35,6 @@ public class EventosActivity extends AppCompatActivity {
                 .resize(width, 300)
                 .centerCrop()
                 .into(imageView);
-
-
     }
     }
 

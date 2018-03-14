@@ -18,7 +18,7 @@ public class InstalacionServiciosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instalacionesservicios);
         Toolbar toolbar = findViewById(R.id.toolbarinfo);
-        imageView=findViewById(R.id.imageView3);
+        imageView=findViewById(R.id.imageView25);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Instalación y Servicios");
         toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);

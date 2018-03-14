@@ -12,50 +12,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_width="432dp"
+        android:layout_height="63dp"
         android:scaleType="fitStart"
         android:src="@drawable/cabeceraofertas"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarinfo"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarinfo" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="266dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="92dp"
         android:text="Reserva de oferta "
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.353"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintGuide_begin="137dp"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="RtlCompat" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
 
     <ImageView
@@ -73,14 +51,12 @@
         android:id="@+id/etnombre"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="80dp"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:layout_marginLeft="16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/etapellio"
@@ -88,11 +64,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Apellidos"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toEndOf="@+id/etnombre"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -100,14 +76,13 @@
         android:id="@+id/ettele"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Teléfono"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etnombre"
-        android:layout_marginLeft="16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/etnombre" />
 
     <EditText
         android:id="@+id/etemail"
@@ -120,6 +95,7 @@
         android:hint="E-mail"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toEndOf="@+id/ettele"
         app:layout_constraintTop_toBottomOf="@+id/etapellio" />
 
@@ -127,14 +103,13 @@
         android:id="@+id/etfentrada"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Fecha Entrada"
         android:inputType="date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ettele"
-        android:layout_marginLeft="16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/ettele" />
 
     <EditText
         android:id="@+id/etfsalida"
@@ -147,6 +122,7 @@
         android:hint="Fecha Salida"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.77"
         app:layout_constraintStart_toEndOf="@+id/etfentrada"
         app:layout_constraintTop_toBottomOf="@+id/etemail" />
 
@@ -154,14 +130,12 @@
         android:id="@+id/nhabitacio"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="80dp"
         android:ems="10"
         android:hint="Nº Habitaciones"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etfentrada"
-        android:layout_marginLeft="16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/etfentrada" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/faboferta"
@@ -173,8 +147,7 @@
         android:layout_marginEnd="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_my_icon"
-        android:layout_marginRight="28dp" />
+        app:srcCompat="@drawable/ic_my_icon" />
 
 
 </android.support.constraint.ConstraintLayout>

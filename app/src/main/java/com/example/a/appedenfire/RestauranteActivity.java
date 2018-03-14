@@ -29,7 +29,7 @@ public class RestauranteActivity extends AppCompatActivity {
         int width = size.x;
 
         Picasso.get()
-                .load("http://hoteleleden.es/imagenes/cabecera_banos.jpg")
+                .load("http://hoteleleden.es/imagenes/img_restaurante.jpg")
                 .resize(width, 300)
                 .centerCrop()
                 .into(imageView);

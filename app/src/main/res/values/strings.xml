@@ -6,7 +6,7 @@
 </string>
     <string name="informacion1">Cuenta con una situación privilegiada donde, a poca distancia puede disfrutar de la playa, de la montaña, de la atractiva Alpujarra (tanto almeriense como granadina), del Parque Natural Cabo de Gata con sus maginíficas calas, la ciudad de Almería con su Alcazaba del siglo X... un sin fin de atractivas opciones para disfrutar.</string>
     <string name="direcion"> CARRETERA DE MALAGA, KM.414, 04710 Santa María del Águila, Almería</string>
-    <string name="recursosuite">Disponemos de 15 elegantes habitavcioens con baño privado, escritorio,TV satélite, secador, caja fuertem wifi gratis y algunas con bañera de hidromasaje. En las zonas comunes se puede disfrutar de una pequeña biblioteca, salones,cafetería y dispone de ancesor para facilitar el movimiento por el hotel , jardines y terrazas así como parking propio.</string>
+    <string name="recursosuite">Disponemos de 15 elegantes habitaciones con baño privado, escritorio,TV satélite, secador, caja fuertem wifi gratis y algunas con bañera de hidromasaje. En las zonas comunes se puede disfrutar de una pequeña biblioteca, salones,cafetería y dispone de ancesor para facilitar el movimiento por el hotel , jardines y terrazas así como parking propio.</string>
     <string name="recursoresta">Nuestros platos están elaborados al 100%, tanto verduras como pescados y mariscos, con excelentes productos de la tierra y del mar que nos rodea, el campo del poniente almeriense conocido como "La Huerta de Europa".Disponemos de gran variedad de carne y pescado.Disponemos de un amplio comedor con capacidad para 100 comensales, resultando un lugar idóneo para reuniones de trabajo.</string>
     <string name="recursoevento"> El abanico es practicamente infinito ya que nos adecuamos a todas las necesidades del cliente ofertando nuestros recursos y buscando los solicitados por el cliente si no disponemos de ellos.
 Realizamos tanto aniversarios, bodas, ceremonias civiles, comuniones......como desperdidas de soltero/a, cumpleaños, comidas de empresa, reuniones de trabajo, congresos,...etc.</string>
@@ -39,4 +39,7 @@ Realizamos tanto aniversarios, bodas, ceremonias civiles, comuniones......como d
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="resta">Un gran surtido de carnes a la brasa, Cerdo Ibérico de Sierra de Aracena, Ternera Gallega, Cordero Lechal, Paletillas de Cordero, Arroz con Bogavante, Parrillada de Verduras de nuestra zona, Bacalao gratinado con muselina, Gambas al Pil-Pil, Pescados y mariscos de nuestras costas (Gallo Pedro, Lenguado, Gallineta, Gambón Rojo, Gamba Blanca y Roja y Quisquilla).</string>
+    <string name="bodega">Ponemos al servicio del cliente un amplio abanico de vinos y cavas para el acompañamiento de nuestros platos. Les mostramos algunos ejemplos de Denominaciones de Origen a su disposición en nuestro Restaurante:</string>
+    <string name="bodega1">Ribera del Duero, Riojas, Bierzo, Penedés, De la Tierra...</string>
+    <string name="instalacion">El hotel ofrece 44 habitacioines de las cuales 20 disponen de cochera individual para su mayor comodidad, y una Suite Junior. Todas ellas están creadas uniendo la sencillez y el confort para que el descanso sea perfecto.</string>
 </resources>
