@@ -1,11 +1,13 @@
 package com.example.a.appedenfire;
 
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -20,12 +22,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class ReservaOfertaActivity extends AppCompatActivity {
-    ImageView flecha6;
+    ImageView flecha6,imageView;
     private static final String TAG = "NewPostActivity";
     private static final String REQUIRED = "Required";
 
@@ -33,27 +36,43 @@ public class ReservaOfertaActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
     // [END declare_database_ref]
 
-    private EditText etnombre,etape,ettel,etmail,etfentrada,etfsalida,etnhabi;
+    private EditText etnombre, etape, ettel, etmail, etfentrada, etfsalida, etnhabi;
     private FloatingActionButton mSubmitButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservaoferta);
-        flecha6=findViewById(R.id.flecha9);
-        etnombre=findViewById(R.id.etnombre);
-        etape=findViewById(R.id.etapellio);
-        ettel=findViewById(R.id.ettele);
-        etmail=findViewById(R.id.etemail);
-        etfentrada=findViewById(R.id.etfentrada);
-        etfsalida=findViewById(R.id.etfsalida);
-        etnhabi=findViewById(R.id.nhabitacio);
-        mSubmitButton=findViewById(R.id.faboferta);
+        flecha6 = findViewById(R.id.flecha9);
+        etnombre = findViewById(R.id.etnombre);
+        etape = findViewById(R.id.etapellio);
+        ettel = findViewById(R.id.ettele);
+        etmail = findViewById(R.id.etemail);
+        etfentrada = findViewById(R.id.etfentrada);
+        etfsalida = findViewById(R.id.etfsalida);
+        etnhabi = findViewById(R.id.nhabitacio);
+        mSubmitButton = findViewById(R.id.faboferta);
         Toolbar toolbar = findViewById(R.id.toolbarinfo);
         setSupportActionBar(toolbar);
+        imageView=findViewById(R.id.imageView5);
         getSupportActionBar().setTitle("Información");
         toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int width = size.x;
+
+        Picasso.get()
+                .load("http://hoteleleden.es/imagenes/cabecera_entrada.jpg")
+                .resize(width, 300)
+                .centerCrop()
+                .into(imageView);
+
+
+
+
         flecha6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

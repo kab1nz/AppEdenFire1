@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.a.appedenfire.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -41,7 +42,9 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarHolder>
         holder.nombreLugar.setText(lugar.getNombreLugar());
         holder.descripcionLugar.setText(lugar.getDescripcionLugar());
         holder.ratingLugar.setText(String.valueOf(lugar.getRatingLugar()));
-        holder.imageView.setImageDrawable(context.getResources().getDrawable(lugar.getImage()));
+        Picasso.get()
+                .load(lugar.getImage())
+                .into(holder.imageView);
     }
 
     @Override

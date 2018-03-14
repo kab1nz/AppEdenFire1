@@ -64,6 +64,7 @@ public class ReservaHabitacionActivity extends AppCompatActivity {
 
     }
     private void submitPost() {
+        boolean bandera = true;
 
         final String nombre = etnombre.getText().toString();
         final String apellido = etapellido.getText().toString();
@@ -74,6 +75,18 @@ public class ReservaHabitacionActivity extends AppCompatActivity {
         try{
 
               nhabitaciones = Integer.valueOf(etnhab.getText().toString());
+              if(nhabitaciones==0 || nhabitaciones <0 ){
+                  bandera=false;
+                  Toast.makeText(getApplicationContext(), "Nº Habitación invalido", Toast.LENGTH_LONG).show();
+                  etnombre.setText("");
+                  etapellido.setText("");
+                  etemail.setText("");
+                  etfentrada.setText("");
+                  etfsalida.setText("");
+                  etnhab.setText("");
+                  precio = 0;
+
+              }
         }catch(NumberFormatException ex){ // handle your exception
         }
         String tipo = "";
@@ -93,7 +106,6 @@ public class ReservaHabitacionActivity extends AppCompatActivity {
 
         }
         Habitacion com = new Habitacion();
-        boolean bandera = true;
         bandera = com.comprobarCampos(nombre, apellido, email, fechaentrada, fechasalida, nhabitaciones, precio, tipo);
         if (bandera == true) {
 

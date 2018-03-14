@@ -9,57 +9,95 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/card_view"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
         android:layout_margin="@dimen/card_margin"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:elevation="3dp"
         card_view:cardCornerRadius="4dp">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/labelNombre"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Nombre"
-                />
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Nombre"></TextView>
 
-            <TextView
-                android:id="@+id/labelApellido"
-                android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/labelNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Nombre" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Apellido"
-                android:layout_below="@id/labelNombre"
+                android:orientation="horizontal"
+
+                >
+
+                <TextView
+                    android:id="@+id/tap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apellido"
+
+
+                    />
+
+                <TextView
+                    android:id="@+id/labelApellido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apellido"
+                    android:layout_marginLeft="20dp"
+
+
+                    />
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
 
 
                 />
-
-
             <TextView
                 android:id="@+id/labelEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/labelApellido"
                 android:text="Email"
+                android:layout_marginLeft="20dp"
 
 
                 />
 
-
+        </LinearLayout>
             <TextView
                 android:id="@+id/labelFentrada"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/labelEmail"
                 android:scaleType="centerCrop"
-                android:text="FechaEntrada"
-              />
+                android:text="FechaEntrada" />
 
 
             <TextView
@@ -68,32 +106,28 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/labelFentrada"
 
-                android:text="FechaSalida"
- />
+                android:text="FechaSalida" />
 
             <TextView
                 android:id="@+id/labelNhab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/labelFsalida"
-                android:text="NºHab"
-           />
+                android:text="NºHab" />
 
             <TextView
                 android:id="@+id/labelTipo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/labelNhab"
-                android:text="Tipo"
-            />
+                android:text="Tipo" />
 
             <TextView
                 android:id="@+id/labelPrecio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Precio"
                 android:layout_below="@id/labelTipo"
-             />
+                android:text="Precio" />
 
             <Button
                 android:id="@+id/btnaceptar"
@@ -122,7 +156,7 @@
                 android:text="RECHAZAR" />
 
 
-        </RelativeLayout>
+        </LinearLayout>
 
     </android.support.v7.widget.CardView>
 </LinearLayout>

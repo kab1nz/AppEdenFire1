@@ -16,9 +16,9 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
-        android:layout_height="186dp"
-        android:background="@drawable/cabecerabanos"
+        android:layout_height="143dp"
         android:scaleType="fitStart"
+        android:src="@drawable/cabecerabanos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

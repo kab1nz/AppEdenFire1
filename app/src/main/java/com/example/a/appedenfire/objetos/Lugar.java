@@ -9,10 +9,10 @@ public class Lugar extends UserId{
     private String nombreLugar;
     private String descripcionLugar;
     private double ratingLugar;
-    private int image;
+    private String image;
 
     public Lugar(){}
-    public Lugar(int id, String nombreLugar, String descripcionLugar, double ratingLugar, int image) {
+    public Lugar(int id, String nombreLugar, String descripcionLugar, double ratingLugar, String image) {
         this.id = id;
         this.nombreLugar = nombreLugar;
         this.descripcionLugar = descripcionLugar;
@@ -52,11 +52,11 @@ public class Lugar extends UserId{
         this.ratingLugar = ratingLugar;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 }

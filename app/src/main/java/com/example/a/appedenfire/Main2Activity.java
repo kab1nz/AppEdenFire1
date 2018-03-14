@@ -3,6 +3,7 @@ package com.example.a.appedenfire;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -64,7 +65,7 @@ public class Main2Activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        CircleMenu circleMenu =(CircleMenu)findViewById(R.id.circle_menu);
+        final CircleMenu circleMenu =(CircleMenu)findViewById(R.id.circle_menu);
         circleMenu.setMainMenu(Color.parseColor("#CDCDCD"),R.drawable.ic_add_black_24dp,R.drawable.ic_clear)
                 .addSubMenu(Color.parseColor("#250CFF"),R.drawable.ic_info)
                 .addSubMenu(Color.parseColor("#6d4c41"),R.drawable.ic_cama_de_matrimonio)
@@ -77,24 +78,64 @@ public class Main2Activity extends AppCompatActivity
 
                         switch (i){
                             case 0:
-                                Intent a = new Intent(Main2Activity.this,InicioActivity.class);
-                                startActivity(a);
+                                Handler handler = new Handler();
+                                handler.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Intent a = new Intent(Main2Activity.this,InicioActivity.class);
+                                        startActivity(a);
+                                    }
+                                },960);
+
                                 break;
                             case 1:
-                                Intent b = new Intent(Main2Activity.this,HabitacionActivity.class);
-                                startActivity(b);
+
+                                Handler handler1 = new Handler();
+                                handler1.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Intent b = new Intent(Main2Activity.this,HabitacionActivity.class);
+                                        startActivity(b);
+                                    }
+                                },960);
+
                                 break;
                             case 2:
-                                Intent c = new Intent(Main2Activity.this,LugarActivity.class);
-                                startActivity(c);
+
+                                Handler handler2 = new Handler();
+                                handler2.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Intent c = new Intent(Main2Activity.this,LugarActivity.class);
+                                        startActivity(c);
+                                    }
+                                },960);
+
                                 break;
                             case 3:
-                                Intent d = new Intent(Main2Activity.this,OfertaActivity.class);
-                                startActivity(d);
+
+                                Handler handler3 = new Handler();
+                                handler3.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Intent d = new Intent(Main2Activity.this,OfertaActivity.class);
+                                        startActivity(d);
+                                    }
+                                },960);
+
                                 break;
                             case 4:
-                                Intent e = new Intent(Main2Activity.this,LoginActivity.class);
-                                startActivity(e);
+
+
+                                Handler handler4 = new Handler();
+                                handler4.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Intent e = new Intent(Main2Activity.this,LoginActivity.class);
+                                        startActivity(e);
+                                    }
+                                },960);
+
                                 break;
 
                         }

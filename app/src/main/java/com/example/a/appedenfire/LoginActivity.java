@@ -18,12 +18,18 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+
+
         Toolbar toolbar = findViewById(R.id.toolbar123);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Login");
         toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
         email_edittext=findViewById(R.id.email_edittext);
         password_edittext=findViewById(R.id.password_edittext);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btnlogin=findViewById(R.id.btnlogin);
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
