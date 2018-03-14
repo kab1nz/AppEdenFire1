@@ -3,6 +3,7 @@ package com.example.a.appedenfire;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Toolbar toolbar = findViewById(R.id.toolbar123);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Login");
+        toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
         email_edittext=findViewById(R.id.email_edittext);
         password_edittext=findViewById(R.id.password_edittext);
         btnlogin=findViewById(R.id.btnlogin);

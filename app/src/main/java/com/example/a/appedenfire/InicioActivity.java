@@ -20,6 +20,7 @@ public class InicioActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbarinfo2);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Información");
+        toolbar.setTitleTextColor(getResources().getColor(R.color.blanco));
         toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

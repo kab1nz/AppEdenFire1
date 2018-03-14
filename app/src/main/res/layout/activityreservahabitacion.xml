@@ -82,7 +82,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Teléfono"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etnombre"
         android:layout_marginLeft="16dp" />
@@ -96,7 +96,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="E-mail"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ettele"
         app:layout_constraintTop_toBottomOf="@+id/etapellio" />
@@ -188,6 +188,8 @@
             android:checked="false"
             android:text="Estandar" />
     </RadioGroup>
+
+
 
 
 </android.support.constraint.ConstraintLayout>

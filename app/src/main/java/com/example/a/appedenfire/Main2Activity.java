@@ -100,6 +100,8 @@ public class Main2Activity extends AppCompatActivity
                         }
                     }
                 });
+        circleMenu.openMenu();
+
     }
 
     @Override

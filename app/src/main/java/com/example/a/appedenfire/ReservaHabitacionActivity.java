@@ -72,6 +72,7 @@ public class ReservaHabitacionActivity extends AppCompatActivity {
         final String fechasalida = etfsalida.getText().toString();
         int nhabitaciones=0;
         try{
+
               nhabitaciones = Integer.valueOf(etnhab.getText().toString());
         }catch(NumberFormatException ex){ // handle your exception
         }

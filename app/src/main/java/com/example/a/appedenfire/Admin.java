@@ -148,10 +148,32 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
 
 
 
-
+            sendEmail(pos);
     }
 
 
+
+
+    protected void sendEmail(final int pos) {
+        String[] TO = {reservaList.get(pos).getEmail().toString()};
+        String[] CC = {""};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+// Esto podrás modificarlo si quieres, el asunto y el cuerpo del mensaje
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "RESERVA HOTEL EL EDEN");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Bienvenido al hotel EL eden" +reservaList.get(pos).getNombre().toString()+" su reserva ha sido aceptada.");
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
+            finish();
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(Admin.this,
+                "No tienes clientes de email instalados.", Toast.LENGTH_SHORT).show();
+        }
+    }
 
     @Override
     public void rechazarReserva(String id, final int pos) {
