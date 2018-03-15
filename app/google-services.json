@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1020322640659:android:5a1084fdf721bd29",
         "android_client_info": {
-          "package_name": "com.example.a.appedenfire"
+          "package_name": "com.eden.a.appedenfire"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "1020322640659-u344tfkjsj3oo36jbqekb9ptpoi3hd06.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.a.appedenfire",
+            "package_name": "com.eden.a.appedenfire",
             "certificate_hash": "bd4a336d261a154c14a7032e0394d230fb3f5609"
           }
         },
