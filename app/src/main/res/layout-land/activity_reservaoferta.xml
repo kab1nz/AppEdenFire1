@@ -16,9 +16,12 @@
         android:id="@+id/imageView5"
         android:layout_width="432dp"
         android:layout_height="63dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginStart="108dp"
         android:scaleType="fitStart"
         android:src="@drawable/cabeceraofertas"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarinfo" />
 
     <TextView
@@ -99,43 +102,74 @@
         app:layout_constraintStart_toEndOf="@+id/ettele"
         app:layout_constraintTop_toBottomOf="@+id/etapellio" />
 
-    <EditText
-        android:id="@+id/etfentrada"
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilPlannedDate2"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="56dp"
         android:ems="10"
         android:hint="Fecha Entrada"
         android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/faboferta"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ettele" />
+        app:layout_constraintTop_toBottomOf="@+id/nhabitacio">
 
-    <EditText
-        android:id="@+id/etfsalida"
+        <EditText
+            android:id="@+id/etfentradaofer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false"
+            android:inputType="date"
+            android:maxLines="1" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilPlannedDate6"
         android:layout_width="142dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Fecha Salida"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.77"
-        app:layout_constraintStart_toEndOf="@+id/etfentrada"
-        app:layout_constraintTop_toBottomOf="@+id/etemail" />
+        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintStart_toEndOf="@+id/tilPlannedDate2"
+        app:layout_constraintTop_toBottomOf="@+id/etemail">
+
+        <EditText
+            android:id="@+id/etfsalidaoferta"
+            android:layout_width="142dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="date"
+            android:maxLines="1" />
+    </android.support.design.widget.TextInputLayout>
 
     <EditText
         android:id="@+id/nhabitacio"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="80dp"
         android:ems="10"
         android:hint="Nº Habitaciones"
         android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/etfsalida"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etfentrada" />
+        app:layout_constraintTop_toBottomOf="@+id/ettele" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/faboferta"
