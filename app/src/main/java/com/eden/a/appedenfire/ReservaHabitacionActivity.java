@@ -108,28 +108,20 @@ public class ReservaHabitacionActivity extends AppCompatActivity implements View
         int dias =0;
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 
-        try {
-            Date fechaInicial=dateFormat.parse(fechaentrada);
-            Date fechaFinal=dateFormat.parse(fechasalida);
-            dias=(int) ((fechaFinal.getTime()-fechaInicial.getTime())/86400000);
-            Toast.makeText(getApplicationContext(),"Total de dias: "+dias,Toast.LENGTH_LONG).show();
 
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
         if (cbestandar.isChecked()) {
-            precio = 75 * nhabitaciones*dias;
+            precio = 75 * nhabitaciones;
             tipo = "estandar";
 
 
         }
         if (cbgeneral.isChecked()) {
-            precio = 50 * nhabitaciones*dias;
+            precio = 50 * nhabitaciones;
             tipo = "general";
 
         }
         if (cbsuite.isChecked()) {
-            precio = 150 * nhabitaciones*dias;
+            precio = 150 * nhabitaciones;
             tipo = "suite";
 
         }
