@@ -146,7 +146,7 @@ public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.
             nhab=(TextView)mView.findViewById(R.id.labelNhab);
             tipo=(TextView)mView.findViewById(R.id.labelTipo);
             precio=(TextView)mView.findViewById(R.id.labelPrecio);
-            cv=mView.findViewById(R.id.card_view);
+            cv=mView.findViewById(R.id.cardView);
 
         }
     }

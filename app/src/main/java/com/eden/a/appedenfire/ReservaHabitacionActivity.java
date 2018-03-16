@@ -14,19 +14,14 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 
-import com.eden.a.appedenfire.objetos.FireBaseReferences;
 import com.eden.a.appedenfire.objetos.Habitacion;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -116,7 +111,7 @@ public class ReservaHabitacionActivity extends AppCompatActivity implements View
 
         }
         if (cbgeneral.isChecked()) {
-            precio = 50 * nhabitaciones;
+            precio = 90 * nhabitaciones;
             tipo = "general";
 
         }

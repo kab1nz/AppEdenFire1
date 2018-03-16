@@ -30,7 +30,7 @@ public class InstalacionServiciosActivity extends AppCompatActivity {
         int width = size.x;
 
         Picasso.get()
-                .load("http://hoteleleden.es/imagenes/cabecera_banos.jpg")
+                .load("https://cdn.pixabay.com/photo/2016/11/18/17/41/summer-1836046_960_720.jpg")
                 .resize(width, 300)
                 .centerCrop()
                 .into(imageView);

@@ -10,19 +10,16 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 
-import com.eden.a.appedenfire.objetos.FireBaseReferences;
 import com.eden.a.appedenfire.objetos.Habitacion;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
@@ -42,7 +39,7 @@ public class ReservaOfertaActivity extends AppCompatActivity implements View.OnC
     private DatabaseReference mDatabase;
     // [END declare_database_ref]
 
-    private EditText etnombre, etape, ettel, etmail, etfentrada, etfsalida, etnhabi;
+    private EditText etnombre, etape, ettel, etmail,  etnhabi;
     private FloatingActionButton mSubmitButton;
 
     @Override
@@ -54,8 +51,7 @@ public class ReservaOfertaActivity extends AppCompatActivity implements View.OnC
         etape = findViewById(R.id.etapellio);
         ettel = findViewById(R.id.ettele);
         etmail = findViewById(R.id.etemail);
-        etfentrada = findViewById(R.id.etfentrada);
-        etfsalida = findViewById(R.id.etfsalida);
+
         etnhabi = findViewById(R.id.nhabitacio);
         mSubmitButton = findViewById(R.id.faboferta);
         Toolbar toolbar = findViewById(R.id.toolbarinfo);
@@ -103,13 +99,13 @@ public class ReservaOfertaActivity extends AppCompatActivity implements View.OnC
         final String nombre = etnombre.getText().toString();
         final String apellido = etape.getText().toString();
         final String email = etmail.getText().toString();
-        final String fechaentrada = etfentrada.getText().toString();
-        final String fechasalida = etfsalida.getText().toString();
+        final String fechaentrada = fentrada.getText().toString();
+        final String fechasalida = fsalida.getText().toString();
         int nhabitaciones = 0;
         int precio = 0;
         try {
             nhabitaciones = Integer.valueOf(etnhabi.getText().toString());
-            precio = 45 * nhabitaciones;
+            precio = 59 * nhabitaciones;
 
         } catch (NumberFormatException ex) { // handle your exception
         }
@@ -152,8 +148,8 @@ public class ReservaOfertaActivity extends AppCompatActivity implements View.OnC
             etnombre.setText("");
             etape.setText("");
             etmail.setText("");
-            etfentrada.setText("");
-            etfsalida.setText("");
+            fentrada.setText("");
+            fsalida.setText("");
             etnhabi.setText("");
             precio = 0;
             bandera = false;

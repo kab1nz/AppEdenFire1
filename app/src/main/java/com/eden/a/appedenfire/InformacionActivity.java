@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.squareup.picasso.Picasso;
 
-public class InicioActivity extends AppCompatActivity {
+public class InformacionActivity extends AppCompatActivity {
     ImageView flechainfo;
     Toolbar toolbar;
     ImageView imageView;
@@ -34,7 +34,7 @@ public class InicioActivity extends AppCompatActivity {
         int width = size.x;
 
         Picasso.get()
-                .load("http://hoteleleden.es/imagenes/cabecera_banos.jpg")
+                .load(R.drawable.cabecerabanos)
                 .resize(width, 300)
                 .centerCrop()
                 .into(imageView);

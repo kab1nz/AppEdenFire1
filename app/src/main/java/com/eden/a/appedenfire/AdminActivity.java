@@ -3,48 +3,32 @@ package com.eden.a.appedenfire;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Message;
-import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.eden.a.appedenfire.objetos.Habitacion;
 import com.eden.a.appedenfire.objetos.PeticionesFirebase;
 import com.eden.a.appedenfire.objetos.ReservaListAdapter;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Properties;
 
-import javax.mail.Authenticator;
-import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 
-public class Admin extends AppCompatActivity implements PeticionesFirebase{
+public class AdminActivity extends AppCompatActivity implements PeticionesFirebase{
     private static final String TAGLOG = "firebase-db ->";
     private List<Habitacion>reservaList;
     private ReservaListAdapter reservaListAdapter;
@@ -163,14 +147,15 @@ public class Admin extends AppCompatActivity implements PeticionesFirebase{
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
         emailIntent.putExtra(Intent.EXTRA_CC, CC);
 // Esto podrás modificarlo si quieres, el asunto y el cuerpo del mensaje
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "RESERVA HOTEL EL EDEN");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Bienvenido al hotel EL eden" +reservaList.get(pos).getNombre().toString()+" su reserva ha sido aceptada.");
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "RESERVA HOTEL EL EDEN ACEPTADA");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Bienvenido al hotel EL eden " +reservaList.get(pos).getNombre().toString()+" "+reservaList.get(pos).getApellido().toString()+" su reserva " +
+                "ha sido aceptada, con un total de: "+reservaList.get(pos).getPrecio()+"€, "+"fecha entrada -->"+reservaList.get(pos).getFechaentrada() + " - " +"fecha salida -->" +reservaList.get(pos).getFechaentrada());
 
         try {
             startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
             finish();
         } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(Admin.this,
+            Toast.makeText(AdminActivity.this,
                 "No tienes clientes de email instalados.", Toast.LENGTH_SHORT).show();
         }
     }
