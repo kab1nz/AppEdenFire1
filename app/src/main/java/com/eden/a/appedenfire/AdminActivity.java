@@ -149,7 +149,7 @@ public class AdminActivity extends AppCompatActivity implements PeticionesFireba
 // Esto podrás modificarlo si quieres, el asunto y el cuerpo del mensaje
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "RESERVA HOTEL EL EDEN ACEPTADA");
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Bienvenido al hotel EL eden " +reservaList.get(pos).getNombre().toString()+" "+reservaList.get(pos).getApellido().toString()+" su reserva " +
-                "ha sido aceptada, con un total de: "+reservaList.get(pos).getPrecio()+"€, "+"fecha entrada -->"+reservaList.get(pos).getFechaentrada() + " - " +"fecha salida -->" +reservaList.get(pos).getFechaentrada());
+                "ha sido aceptada, con un total de: "+reservaList.get(pos).getPrecio()+"€, "+"fecha entrada -->"+reservaList.get(pos).getFechaentrada() + " - " +"fecha salida -->" +reservaList.get(pos).getFechasalida());
 
         try {
             startActivity(Intent.createChooser(emailIntent, "Enviar email..."));
