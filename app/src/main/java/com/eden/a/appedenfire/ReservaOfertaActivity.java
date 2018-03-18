@@ -8,6 +8,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.Display;
 import android.view.View;
 import android.widget.DatePicker;
@@ -24,20 +25,31 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 public class ReservaOfertaActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView flecha6, imageView;
     private static final String TAG = "NewPostActivity";
     private static final String REQUIRED = "Required";
-    EditText fentrada, fsalida;
-    private int dia, mes, anio;
-
+    boolean bandera = true;
+    Calendar dateEntrada ;
+    Calendar dateSalida ;
+    int precio = 0;
+    Long milisSalida,milisEntrada;
+    private int dia,mes,anio;
+    private int dia1,mes1,anio1;
     // [START declare_database_ref]
     private DatabaseReference mDatabase;
     // [END declare_database_ref]
+    EditText fentrada,fsalida;
 
     private EditText etnombre, etape, ettel, etmail,  etnhabi;
     private FloatingActionButton mSubmitButton;
@@ -86,44 +98,81 @@ public class ReservaOfertaActivity extends AppCompatActivity implements View.OnC
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                submitPost();
-                onBackPressed();
+                try {
+                    submitPost();
+                    etnombre.setText("");
+                    etape.setText("");
+                    etmail.setText("");
+                    fentrada.setText("");
+                    fsalida.setText("");
+                    etnhabi.setText("");
+                    ettel.setText("");
+                    precio = 0;
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
 
     }
 
-    private void submitPost() {
+    private void submitPost() throws ParseException {
 
         final String nombre = etnombre.getText().toString();
         final String apellido = etape.getText().toString();
         final String email = etmail.getText().toString();
         final String fechaentrada = fentrada.getText().toString();
         final String fechasalida = fsalida.getText().toString();
-        int nhabitaciones = 0;
+        final String telenofo = ettel.getText().toString();
+        final String numerohabi=etnhabi.getText().toString();
+        if(telenofo.isEmpty()){
+            bandera=false;
+        }
+        int nhabitaciones ;
         int precio = 0;
+
         try {
             nhabitaciones = Integer.valueOf(etnhabi.getText().toString());
-            precio = 59 * nhabitaciones;
 
         } catch (NumberFormatException ex) { // handle your exception
         }
         String tipo = "estandar";
+        validarCampos(etnombre);
+        validarCampos(etape);
+        validarCampos(etmail);
+        validarCampos(fentrada);
+        validarCampos(fsalida);
+        validarCampos(ettel);
+        validarCampos(etnhabi);
         int reserva = 0;
+        if (validarEmail(email)){
+            bandera=false;
+        }
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date fechaInicial=dateFormat.parse(fechaentrada);
+        Date fechaFinal=dateFormat.parse(fechasalida);
+
+
+        long diffTime = fechaFinal.getTime() - fechaInicial.getTime();
+        long diffDays = diffTime / (1000 * 60 * 60 * 24);
+        int dias = (int) diffDays;
         Habitacion com = new Habitacion();
-        boolean bandera = true;
-        bandera = com.comprobarCampos(nombre, apellido, email, fechaentrada, fechasalida, nhabitaciones, precio, tipo);
+        int precio1=59*dias;
+
+        bandera = com.comprobarCampos(nombre, apellido, email, fechaentrada, fechasalida, numerohabi, precio, tipo,telenofo);
         if (bandera == true) {
             FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
             Map<String, Object> data = new HashMap<>();
             data.put("nombre", nombre);
             data.put("apellido", apellido);
             data.put("email", email);
+            data.put("telefono", telenofo);
             data.put("fechaentrada", fechaentrada);
             data.put("fechasalida", fechasalida);
-            data.put("nhabitaciones", nhabitaciones);
-            data.put("precio", precio);
+            data.put("nhabitaciones", numerohabi);
+            data.put("precio", precio1);
             data.put("tipo", tipo);
             data.put("reserva", 0);
 
@@ -151,6 +200,7 @@ public class ReservaOfertaActivity extends AppCompatActivity implements View.OnC
             fentrada.setText("");
             fsalida.setText("");
             etnhabi.setText("");
+            ettel.setText("");
             precio = 0;
             bandera = false;
         }
@@ -158,36 +208,68 @@ public class ReservaOfertaActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-        if (v == fentrada) {
-            final Calendar c = Calendar.getInstance();
-            dia = c.get(Calendar.DAY_OF_MONTH);
-            mes = c.get(Calendar.MONTH);
-            anio = c.get(Calendar.YEAR);
+        Calendar calendar = new GregorianCalendar(anio,mes,dia);
+        Calendar calendar1 = new GregorianCalendar(anio,mes,dia);
+        if(v==fentrada){
+            dateEntrada = Calendar.getInstance();
+            String current = DateFormat.getDateInstance(DateFormat.FULL).format(dateEntrada.getTime());
+            fentrada.setText(current);
+            dia=dateEntrada.get(Calendar.DAY_OF_MONTH);
+            mes=dateEntrada.get(Calendar.MONTH+1);
+            anio=dateEntrada.get(Calendar.YEAR);
+            fentrada.getMinHeight();
+            DatePickerDialog datePickerDialog = new DatePickerDialog(ReservaOfertaActivity.this, new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    fentrada.setText(year +"-"+ (month+1)+"-" +dayOfMonth);
+                    dia=dayOfMonth;
+                    mes=month+1;
+                    anio=year;
+                }
+            }
+                    ,dia,mes,anio);
+            datePickerDialog.show();
+           datePickerDialog.updateDate(2018,3,17);
+            milisEntrada = calendar.getTimeInMillis();
+
+
+        }
+        if(v==fsalida){
+            dateSalida = Calendar.getInstance();
+            dia1=dateSalida.get(Calendar.DAY_OF_MONTH);
+            mes1=dateSalida.get(Calendar.MONTH+1);
+            anio1=dateSalida.get(Calendar.YEAR);
 
             DatePickerDialog datePickerDialog = new DatePickerDialog(ReservaOfertaActivity.this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                    fentrada.setText(dayOfMonth + "/" + (month + 1) + " /" + year);
+                    dia1=dayOfMonth;
+                    mes1=month+1;
+                    anio1=year;
+                    fsalida.setText(year +"-"+ (month+1)+"-" +dayOfMonth);
                 }
             }
-                , dia, mes, anio);
+                    ,dia1,mes1,anio1);
             datePickerDialog.show();
-        }
-        if (v == fsalida) {
-            final Calendar c = Calendar.getInstance();
-            dia = c.get(Calendar.DAY_OF_MONTH);
-            mes = c.get(Calendar.MONTH);
-            anio = c.get(Calendar.YEAR);
+            datePickerDialog.updateDate(2018,3,17);
 
-            DatePickerDialog datePickerDialog = new DatePickerDialog(ReservaOfertaActivity.this, new DatePickerDialog.OnDateSetListener() {
-                @Override
-                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                    fsalida.setText(dayOfMonth + "/" + (month + 1) + " /" + year);
-                }
-            }
-                , dia, mes, anio);
-            datePickerDialog.show();
+            milisSalida = calendar1.getTimeInMillis();
         }
+
     }
-}
 
+    private boolean validarEmail(String email) {
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        return pattern.matcher(email).matches();
+    }
+    private void validarCampos(EditText et){
+        if(et.getText().toString().isEmpty()) {
+            et.setError(getString(R.string.error_campo_obligatorio));
+            et.requestFocus();
+        }
+        return;
+
+    }
+
+
+}

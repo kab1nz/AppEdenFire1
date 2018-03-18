@@ -35,11 +35,12 @@ Realizamos tanto aniversarios, bodas, ceremonias civiles, comuniones......como d
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-
+    <string name="error_campo_obligatorio">Campo Obligatorio</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="resta">Un gran surtido de carnes a la brasa, Cerdo Ibérico de Sierra de Aracena, Ternera Gallega, Cordero Lechal, Paletillas de Cordero, Arroz con Bogavante, Parrillada de Verduras de nuestra zona, Bacalao gratinado con muselina, Gambas al Pil-Pil, Pescados y mariscos de nuestras costas (Gallo Pedro, Lenguado, Gallineta, Gambón Rojo, Gamba Blanca y Roja y Quisquilla).</string>
     <string name="bodega">Ponemos al servicio del cliente un amplio abanico de vinos y cavas para el acompañamiento de nuestros platos. Les mostramos algunos ejemplos de Denominaciones de Origen a su disposición en nuestro Restaurante:</string>
     <string name="bodega1">Ribera del Duero, Riojas, Bierzo, Penedés, De la Tierra...</string>
     <string name="instalacion">El hotel ofrece 44 habitacioines de las cuales 20 disponen de cochera individual para su mayor comodidad, y una Suite Junior. Todas ellas están creadas uniendo la sencillez y el confort para que el descanso sea perfecto.</string>
+
 </resources>
