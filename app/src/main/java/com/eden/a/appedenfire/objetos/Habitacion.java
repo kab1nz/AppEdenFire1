@@ -15,10 +15,9 @@ public class Habitacion extends UserId {
     String nombre;
     String apellido;
     String email;
-    String tel;
     String fechaentrada;
     String fechasalida;
-    String nhabitaciones;
+    int nhabitaciones;
     int precio;
     String tipo;
 
@@ -32,7 +31,7 @@ public class Habitacion extends UserId {
     }
 
 
-    public Habitacion(String nombre, String apellido, String email, String fechaentrada, String fechasalida, String nhabitaciones, int precio, String tipo,int reserva,String tel) {
+    public Habitacion(String nombre, String apellido, String email, String fechaentrada, String fechasalida, int nhabitaciones, int precio, String tipo,int reserva) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -42,11 +41,10 @@ public class Habitacion extends UserId {
         this.precio = precio;
         this.tipo = tipo;
         this.estado=reserva;
-        this.tel=tel;
     }
-    public boolean comprobarCampos(String nombre, String apellido, String email, String fechaentrada, String fechasalida, String nhabitaciones, int precio, String tipo,String tel){
+    public boolean comprobarCampos(String nombre, String apellido, String email, String fechaentrada, String fechasalida, int nhabitaciones, int precio, String tipo){
 
-        if(nombre.isEmpty()||apellido.isEmpty()||email.isEmpty()||fechaentrada.isEmpty()||fechasalida.isEmpty()||nhabitaciones.isEmpty() || String.valueOf(precio).isEmpty()||tipo.isEmpty()||tel.isEmpty()){
+        if(nombre.isEmpty()||apellido.isEmpty()||email.isEmpty()||fechaentrada.isEmpty()||fechasalida.isEmpty()||String.valueOf(nhabitaciones).isEmpty() || String.valueOf(precio).isEmpty()){
             return false;
         }else
             return true;
@@ -107,11 +105,11 @@ public class Habitacion extends UserId {
         this.fechasalida = fechasalida;
     }
 
-    public String getNhabitaciones() {
+    public int getNhabitaciones() {
         return nhabitaciones;
     }
 
-    public void setNhabitaciones(String nhabitaciones) {
+    public void setNhabitaciones(int nhabitaciones) {
         this.nhabitaciones = nhabitaciones;
     }
 
@@ -129,14 +127,6 @@ public class Habitacion extends UserId {
 
     public int getReserva() {
         return estado;
-    }
-
-    public String getTel() {
-        return tel;
-    }
-
-    public void setTel(String tel) {
-        this.tel = tel;
     }
 
     public void setReserva(int reserva) {

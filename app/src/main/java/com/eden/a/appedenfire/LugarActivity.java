@@ -65,7 +65,7 @@ public class LugarActivity extends AppCompatActivity {
         lugarList.add(
                 new Lugar(
                         4,
-                        "Cala Rajá",
+                        "Cala Raj)",
                         "La ubicación de esta pequeña cala, de poco mas de 120 metros de longitud, es privilegiada pues se encuentra entre la zona de especial protección marina de la Punta de Cabo de Gata y el Cerro del Vela Blanca, zona de especial protección terrestre, muy destacable es la vegetación de alrededor de esta cala, donde podemos observar la flora típica de Cabo de Gata.",
                         3.3,
                         "https://www.cabogataalmeria.com/img/playas/sub_calaRaja.jpg"));

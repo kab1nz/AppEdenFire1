@@ -17,12 +17,15 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="413dp"
-        android:layout_height="106dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:scaleType="fitStart"
         android:src="@drawable/restaurante"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarinfo7"
-        tools:layout_editor_absoluteX="270dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarinfo7" />
 
 
     <!-- everything you already have -->

@@ -134,7 +134,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ettele">
 
         <EditText
-            android:id="@+id/etfentradaofer"
+            android:id="@+id/etfentrada1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -159,7 +159,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etemail">
 
         <EditText
-            android:id="@+id/etfsalidaoferta"
+            android:id="@+id/etfsalida1"
             android:layout_width="142dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -191,7 +191,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/faboferta"
+        android:id="@+id/fabicon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"

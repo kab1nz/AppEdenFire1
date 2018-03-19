@@ -14,10 +14,10 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="432dp"
-        android:layout_height="63dp"
+        android:layout_width="278dp"
+        android:layout_height="67dp"
         android:layout_marginRight="36dp"
-        android:layout_marginStart="108dp"
+        android:layout_marginStart="60dp"
         android:scaleType="fitStart"
         android:src="@drawable/cabeceraofertas"
         app:layout_constraintRight_toRightOf="parent"
@@ -117,7 +117,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <EditText
-            android:id="@+id/etfentradaofer"
+            android:id="@+id/etfentrada1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -143,7 +143,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etemail">
 
         <EditText
-            android:id="@+id/etfsalidaoferta"
+            android:id="@+id/etfsalida1"
             android:layout_width="142dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -169,7 +169,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ettele" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/faboferta"
+        android:id="@+id/fabicon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"

@@ -27,20 +27,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 import java.util.Properties;
 
-import javax.mail.Authenticator;
-import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
 /**
  * Created by a on 10/03/2018.
  */
 
 public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.ViewHolder> {
-    Session session=null;
     List<Habitacion> reservaList;
     PeticionesFirebase listener;
     public Context context;
@@ -146,7 +137,7 @@ public class ReservaListAdapter extends RecyclerView.Adapter<ReservaListAdapter.
             nhab=(TextView)mView.findViewById(R.id.labelNhab);
             tipo=(TextView)mView.findViewById(R.id.labelTipo);
             precio=(TextView)mView.findViewById(R.id.labelPrecio);
-            cv=mView.findViewById(R.id.cardView);
+            cv=mView.findViewById(R.id.card_view);
 
         }
     }

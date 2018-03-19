@@ -18,7 +18,7 @@ public class RestauranteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_restaurante);
         Toolbar toolbar = findViewById(R.id.toolbarinfo7);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Información");
+        getSupportActionBar().setTitle("Restaurante");
         imageView=findViewById(R.id.imageView7);
         toolbar.setNavigationIcon(R.drawable.ic_flecha_izquierda);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
